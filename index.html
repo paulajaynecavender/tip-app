@@ -18,38 +18,38 @@
       <h1 class="title">Bill Splitter</h1>
       <div class="calc-container">
         <div class="input-container">
-          <div>
+          <div class="bill-total">
             <p>bill total</p>
-            <input type="text" />
+            <form id="bill-input"><input type="number" id="bill" /></form>
           </div>
-          <div>
+          <div class="tip-container">
             <p>select tip %</p>
             <div class="grid">
-              <div>5%</div>
-              <div>10%</div>
-              <div>15%</div>
-              <div>25%</div>
-              <div>50%</div>
-              <div>custom</div>
+              <button class="btn" value="0.05">5%</button>
+              <button class="btn" value="0.1">10%</button>
+              <button class="btn" value="0.15">15%</button>
+              <button class="btn" value="0.25">25%</button>
+              <button class="btn" value="0.5">50%</button>
+              <button class="btn" value="custom">custom</button>
             </div>
           </div>
-          <div>
+          <div class="people-container">
             <p>no. of people</p>
-            <input type="text" />
+            <form id="people-input"><input type="number" id="people" /></form>
           </div>
         </div>
         <div class="totals-container">
-          <div>
-            <div>
+          <div class="results-container">
+            <div class="tip-container">
               <p>tip per person</p>
-              <p class="tip-result">result</p>
+              <p id="tip-result">result</p>
             </div>
-            <div>
+            <div class="total-container">
               <p>total per person</p>
-              <p class="total-result">result</p>
+              <p id="total-result">result</p>
             </div>
           </div>
-          <div><button>reset</button></div>
+          <div><button class="reset">reset</button></div>
         </div>
       </div>
     </div>

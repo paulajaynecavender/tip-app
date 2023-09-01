@@ -79,16 +79,18 @@ body {
   grid-gap: 1rem 1rem;
 }
 .grid :hover,
-.grid :active {
+.grid :active,
+.grid :focus {
   background-color: #85d9d7;
 }
-.grid div {
+.grid button {
   text-align: center;
   background-color: #bfd1ab;
   padding: 0.5rem;
+  border: none;
 }
 
-button {
+.reset {
   background-color: #85d9d7;
   border: none;
   padding: 1rem;

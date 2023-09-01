@@ -80,17 +80,19 @@ body {
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem 1rem;
   :hover,
-  :active {
+  :active,
+  :focus {
     background-color: $complementary;
   }
-  div {
+  button {
     text-align: center;
     background-color: $accent;
     padding: 0.5rem;
+    border: none;
   }
 }
 
-button {
+.reset {
   background-color: $complementary;
   border: none;
   padding: 1rem;

@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+$main: #f2f0dd;
+$accent: #bfd1ab;
+$complementary: #85d9d7;
+
+body {
+  background-color: $main;
+  //   background: rgb(191, 209, 171);
+  //   background: linear-gradient(
+  //     159deg,
+  //     rgba(191, 209, 171, 0.7813333333333333) 34%,
+  //     rgba(242, 240, 221, 1) 100%
+  //   );
+}
+.main-container {
+  width: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 2rem;
+}
+h1 {
+  text-align: center;
+}
+.calc-container {
+  background-color: $complementary;
+  height: fit-content;
+  width: 100%;
+}

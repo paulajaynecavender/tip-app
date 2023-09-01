@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f2f0dd;
+}
+
+.main-container {
+  width: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.calc-container {
+  background-color: #85d9d7;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}/*# sourceMappingURL=styles.css.map */

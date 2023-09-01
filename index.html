@@ -5,14 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="js.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Tip app</title>
   </head>
   <body>
     <div class="main-container">
-      <h1>Bill Splitter</h1>
+      <h1 class="title">Bill Splitter</h1>
       <div class="calc-container">
-        <div class="input-container"></div>
-        <div class="totals-container"></div>
+        <div class="input-container">
+          <div>
+            <p>bill total</p>
+            <input type="text" />
+          </div>
+          <div>
+            <p>select tip %</p>
+            <div class="grid">
+              <div>5%</div>
+              <div>10%</div>
+              <div>15%</div>
+              <div>25%</div>
+              <div>50%</div>
+              <div>custom</div>
+            </div>
+          </div>
+          <div>
+            <p>no. of people</p>
+            <input type="text" />
+          </div>
+        </div>
+        <div class="totals-container">
+          <div>
+            <div>
+              <p>tip per person</p>
+              <p class="tip-result">result</p>
+            </div>
+            <div>
+              <p>total per person</p>
+              <p class="total-result">result</p>
+            </div>
+          </div>
+          <div><button>reset</button></div>
+        </div>
       </div>
     </div>
   </body>

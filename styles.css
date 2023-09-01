@@ -6,34 +6,90 @@
 
 html {
   font-size: 62.5%;
+  font-family: "Nova Mono", monospace;
 }
 
 body {
-  background-color: #f2f0dd;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(198, 213, 178);
+  background: linear-gradient(159deg, rgb(198, 213, 178) 4%, rgba(242, 240, 221, 0.7492795389) 98%);
 }
 
 .main-container {
-  width: 40rem;
+  width: 35rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   padding: 2rem;
+  border-radius: 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+}
+.main-container * {
+  font-size: 1.8rem;
 }
 
-h1 {
+.title {
   text-align: center;
+  font-size: 3rem;
 }
 
 .calc-container {
-  background-color: #85d9d7;
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+.calc-container > div {
+  padding: 1rem;
+}
+
+.input-container {
+  width: 100%;
+  height: 100%;
+}
+
+.totals-container {
+  background-color: #bfd1ab;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.4px);
+  -webkit-backdrop-filter: blur(6.4px);
+  width: 100%;
+  height: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem 1rem;
+}
+.grid :hover,
+.grid :active {
+  background-color: #85d9d7;
+}
+.grid div {
+  text-align: center;
+  background-color: #bfd1ab;
+  padding: 0.5rem;
+}
+
+button {
+  background-color: #85d9d7;
+  border: none;
+  padding: 1rem;
 }/*# sourceMappingURL=styles.css.map */

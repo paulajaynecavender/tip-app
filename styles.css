@@ -24,13 +24,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   padding: 2rem;
-  border-radius: 1rem;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.6);
   border-radius: 16px;
@@ -112,13 +110,14 @@ button {
 }
 
 .result {
+  padding: 0 2.5rem;
   display: flex;
   justify-content: space-between;
 }
 
 .reset-container {
   text-align: center;
-  margin: 1rem;
+  margin-top: 1rem;
 }
 
 .reset {

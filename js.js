@@ -16,8 +16,8 @@ const calculateBill = () => {
   const people = Number(peopleInput.value);
 
   // calculate tip and add to bill
-  const tipCalc = bill * tip;
-  const billTotal = bill + tipCalc;
+  const tipCalc = Number(bill * tip);
+  const billTotal = Number(bill + tipCalc);
   // const tipSplit = Math.round((tipCalc / people) * 100) / 100;
 
   // split billTotal between no of people
@@ -26,7 +26,18 @@ const calculateBill = () => {
   // print results to DOM
   // netBill.innerHTML = bill;
   // totalTip.innerHTML = tipCalc;
-  grossBill.innerHTML = billTotal;
+
+  billTotal > 0
+    ? (grossBill.innerHTML = billTotal)
+    : (grossBill.innerHTML = bill);
+
   // tipEach.innerHTML = tipSplit;
-  totalEach.innerHTML = totalSplit;
+
+  if (people >= 1) {
+    totalEach.innerHTML = totalSplit;
+  } else if (billTotal > 0) {
+    totalEach.innerHTML = billTotal;
+  } else {
+    totalEach.innerHTML = bill;
+  }
 };

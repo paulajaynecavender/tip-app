@@ -3,7 +3,8 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
+html,
+.tip-container * {
   font-size: 62.5%;
   font-family: "Nova Mono", monospace;
 }
@@ -90,6 +91,10 @@ body {
     padding: 0.5rem;
     border: none;
   }
+}
+.result {
+  display: flex;
+  justify-content: space-between;
 }
 
 .reset {

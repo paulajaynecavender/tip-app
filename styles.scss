@@ -4,14 +4,15 @@
   box-sizing: border-box;
 }
 html,
-.tip-container * {
+input,
+button {
   font-size: 62.5%;
-  font-family: "Nova Mono", monospace;
+  font-family: "Josefin Sans", sans-serif;
 }
 
 $main: #f2f0dd;
 $accent: #bfd1ab;
-$complementary: #85d9d7;
+$complementary: #7f9c5d;
 
 @mixin glass-box {
   border-radius: 16px;
@@ -68,37 +69,69 @@ body {
 .input-container {
   width: 100%;
   height: 100%;
+  > div {
+    margin-top: 1rem;
+  }
 }
+
+#bill-input,
+#people-input {
+  width: 10rem;
+  background-color: $complementary;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.inline {
+  // background-color: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .totals-container {
   background-color: $accent;
   @include glass-box;
   width: 100%;
   height: 100%;
 }
+
+.selected {
+  background-color: $complementary;
+}
+
+button {
+  text-align: center;
+  background-color: $accent;
+  padding: 0.5rem;
+  border: none;
+}
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem 1rem;
-  :hover,
-  :active,
-  :focus {
-    background-color: $complementary;
-  }
-  button {
-    text-align: center;
-    background-color: $accent;
-    padding: 0.5rem;
-    border: none;
-  }
 }
+
 .result {
   display: flex;
   justify-content: space-between;
 }
-
+.reset-container {
+  text-align: center;
+  margin: 1rem;
+}
 .reset {
   background-color: $complementary;
   border: none;
   padding: 1rem;
+}
+.reset:hover {
+  background-color: $main;
+}
+.reset:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 9rem 0.2rem black;
 }

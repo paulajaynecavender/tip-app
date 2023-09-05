@@ -1,43 +1,55 @@
 let billInput = document.getElementById("bill-input");
 let peopleInput = document.getElementById("people-input");
 let buttons = document.querySelector(".grid");
-// let netBill = document.getElementById("net-bill");
-// let totalTip = document.getElementById("total-tip");
+let btnList = document.querySelectorAll(".btn");
 let grossBill = document.getElementById("gross-bill");
-// let tipEach = document.getElementById("tip-each");
 let totalEach = document.getElementById("total-each");
+let resetBtn = document.getElementById("reset");
 
-// get value of tip selected
+// get values of input boxes
 var tip;
 
 const calculateBill = () => {
-  // get values of input boxes
-  const bill = Number(billInput.value);
-  const people = Number(peopleInput.value);
+  var bill = Number(billInput.value);
+  var people = Number(peopleInput.value);
 
   // calculate tip and add to bill
-  const tipCalc = Number(bill * tip);
-  const billTotal = Number(bill + tipCalc);
-  // const tipSplit = Math.round((tipCalc / people) * 100) / 100;
+  var tipCalc = Number(bill * tip);
+  var billTotal = Number(bill + tipCalc);
 
   // split billTotal between no of people
-  const totalSplit = Math.round((billTotal / people) * 100) / 100;
+  var totalSplit = billTotal / people;
 
   // print results to DOM
-  // netBill.innerHTML = bill;
-  // totalTip.innerHTML = tipCalc;
-
+  // gross bill
   billTotal > 0
-    ? (grossBill.innerHTML = billTotal)
-    : (grossBill.innerHTML = bill);
+    ? (grossBill.innerHTML = `£${billTotal.toFixed(2)}`)
+    : (grossBill.innerHTML = `£${bill.toFixed(2)}`);
 
-  // tipEach.innerHTML = tipSplit;
-
+  // total pp
   if (people >= 1) {
-    totalEach.innerHTML = totalSplit;
+    totalEach.innerHTML = `£${totalSplit.toFixed(2)}`;
   } else if (billTotal > 0) {
-    totalEach.innerHTML = billTotal;
-  } else {
-    totalEach.innerHTML = bill;
+    totalEach.innerHTML = `£${billTotal.toFixed(2)}`;
+  } else if (billTotal <= 0) {
+    totalEach.innerHTML = `£${billTotal.toFixed(2)}`;
   }
 };
+
+// reset button
+const clearResult = () => {
+  console.log("cleared");
+  totalEach.innerHTML = "£0.00";
+  grossBill.innerHTML = "£0.00";
+  billInput.value = "";
+  peopleInput.value = "";
+  tip = "";
+  document.querySelector(".selected")?.classList.remove("selected");
+};
+
+btnList.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector(".selected")?.classList.remove("selected");
+    btn.classList.add("selected");
+  });
+});

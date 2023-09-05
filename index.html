@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap"
       rel="stylesheet"
     />
     <title>Tip app</title>
@@ -18,10 +18,10 @@
       <h1 class="title">Bill Splitter</h1>
       <div class="calc-container">
         <div class="input-container">
-          <div class="bill-total">
+          <div class="bill-total inline">
             <p>Bill Total</p>
             <form>
-              <input type="number" id="bill-input" onkeyup="calculateBill()" />
+              <input type="number" id="bill-input" oninput="calculateBill() " />
             </form>
           </div>
           <div class="tip-container">
@@ -62,22 +62,20 @@
               >
                 50%
               </button>
-              <button
+              <input
                 class="btn"
                 value="custom"
                 onclick="tip=this.value, calculateBill()"
-              >
-                custom
-              </button>
+              />
             </div>
           </div>
-          <div class="people-container">
+          <div class="people-container inline">
             <p>No. of people</p>
             <form>
               <input
                 type="number"
                 id="people-input"
-                onkeyup="calculateBill()"
+                oninput="calculateBill()"
               />
             </form>
           </div>
@@ -94,7 +92,7 @@
             </div> -->
             <div class="result">
               <p>Bill + Tip</p>
-              <p id="gross-bill"></p>
+              <p id="gross-bill">£0.00</p>
             </div>
             <!-- <div class="tip-container">
               <p>tip per person</p>
@@ -102,10 +100,14 @@
             </div> -->
             <div class="result">
               <p>Total per Person</p>
-              <p id="total-each"></p>
+              <p id="total-each">£0.00</p>
             </div>
           </div>
-          <div><button class="reset">reset</button></div>
+          <div class="reset-container">
+            <button class="reset" id="reset" onclick="clearResult()">
+              reset
+            </button>
+          </div>
         </div>
       </div>
     </div>

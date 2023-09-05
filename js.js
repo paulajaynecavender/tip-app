@@ -1,34 +1,32 @@
-let billTotal = document.querySelector("#bill");
-let billInput = document.querySelector("#bill-input");
-let peopleTotal = document.querySelector("#people");
-let peopleInput = document.querySelector("#people-input");
+let billInput = document.getElementById("bill-input");
+let peopleInput = document.getElementById("people-input");
 let buttons = document.querySelector(".grid");
-let tipResult = document.querySelector("#tip-result");
-let totalResult = document.querySelector("#total-result");
+// let netBill = document.getElementById("net-bill");
+// let totalTip = document.getElementById("total-tip");
+let grossBill = document.getElementById("gross-bill");
+// let tipEach = document.getElementById("tip-each");
+let totalEach = document.getElementById("total-each");
 
-// print value of bill total to console
-billInput.addEventListener("input", (e) => {
-  e.preventDefault();
-  console.log("bill: ", billTotal.value);
-});
+// get value of tip selected
+var tip;
 
-peopleInput.addEventListener("input", (e) => {
-  e.preventDefault();
-  console.log("people: ", peopleTotal.value);
-  calc();
-});
+const calculateBill = () => {
+  // get values of input boxes
+  const bill = Number(billInput.value);
+  const people = Number(peopleInput.value);
 
-buttons.addEventListener("click", handleClick);
+  // calculate tip and add to bill
+  const tipCalc = bill * tip;
+  const billTotal = bill + tipCalc;
+  // const tipSplit = Math.round((tipCalc / people) * 100) / 100;
 
-function handleClick(e) {
-  let buttonValue = e.target.value;
-  console.log("tip: ", buttonValue);
-}
+  // split billTotal between no of people
+  const totalSplit = Math.round((billTotal / people) * 100) / 100;
 
-function calc() {
-  let total = billTotal.value / peopleTotal.value;
-  let totalSplit = Math.round(total * 100) / 100;
-  console.log("total split: ", totalSplit);
-  // let tip = billTotal.value * buttonValue;
-  // console.log(tip);
-}
+  // print results to DOM
+  // netBill.innerHTML = bill;
+  // totalTip.innerHTML = tipCalc;
+  grossBill.innerHTML = billTotal;
+  // tipEach.innerHTML = tipSplit;
+  totalEach.innerHTML = totalSplit;
+};

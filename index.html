@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="js.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,38 +20,95 @@
         <div class="input-container">
           <div class="bill-total">
             <p>bill total</p>
-            <form id="bill-input"><input type="number" id="bill" /></form>
+            <form>
+              <input type="number" id="bill-input" onkeyup="calculateBill()" />
+            </form>
           </div>
           <div class="tip-container">
             <p>select tip %</p>
             <div class="grid">
-              <button class="btn" value="0.05">5%</button>
-              <button class="btn" value="0.1">10%</button>
-              <button class="btn" value="0.15">15%</button>
-              <button class="btn" value="0.25">25%</button>
-              <button class="btn" value="0.5">50%</button>
-              <button class="btn" value="custom">custom</button>
+              <button
+                class="btn"
+                value="0.05"
+                onclick="tip=this.value, calculateBill()"
+              >
+                5%
+              </button>
+              <button
+                class="btn"
+                value="0.1"
+                onclick="tip=this.value, calculateBill()"
+              >
+                10%
+              </button>
+              <button
+                class="btn"
+                value="0.15"
+                onclick="tip=this.value, calculateBill()"
+              >
+                15%
+              </button>
+              <button
+                class="btn"
+                value="0.25"
+                onclick="tip=this.value, calculateBill()"
+              >
+                25%
+              </button>
+              <button
+                class="btn"
+                value="0.5"
+                onclick="tip=this.value, calculateBill()"
+              >
+                50%
+              </button>
+              <button
+                class="btn"
+                value="custom"
+                onclick="tip=this.value, calculateBill()"
+              >
+                custom
+              </button>
             </div>
           </div>
           <div class="people-container">
             <p>no. of people</p>
-            <form id="people-input"><input type="number" id="people" /></form>
+            <form>
+              <input
+                type="number"
+                id="people-input"
+                onkeyup="calculateBill()"
+              />
+            </form>
           </div>
         </div>
         <div class="totals-container">
           <div class="results-container">
-            <div class="tip-container">
-              <p>tip per person</p>
-              <p id="tip-result">result</p>
+            <!-- <div>
+              <p>total bill</p>
+              <p id="net-bill"></p>
             </div>
+            <div>
+              <p>total tip</p>
+              <p id="total-tip"></p>
+            </div> -->
+            <div>
+              <p>bill + tip</p>
+              <p id="gross-bill"></p>
+            </div>
+            <!-- <div class="tip-container">
+              <p>tip per person</p>
+              <p id="tip-each">result</p>
+            </div> -->
             <div class="total-container">
               <p>total per person</p>
-              <p id="total-result">result</p>
+              <p id="total-each">result</p>
             </div>
           </div>
           <div><button class="reset">reset</button></div>
         </div>
       </div>
     </div>
+    <script type="text/javascript" src="js.js"></script>
   </body>
 </html>

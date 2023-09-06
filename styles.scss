@@ -25,7 +25,6 @@ $complementary: #7f9c5d;
 body {
   width: 100vw;
   height: 100vh;
-  background: rgb(198, 213, 178);
   background: linear-gradient(
     159deg,
     rgba(198, 213, 178, 1) 4%,
@@ -39,10 +38,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+  // display: flex;
+  // flex-direction: column;
+  // flex-wrap: wrap;
+  // justify-content: center;
   padding: 2rem;
   /* From https://css.glass */
   background: rgba(255, 255, 255, 0.6);

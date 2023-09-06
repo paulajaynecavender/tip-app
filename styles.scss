@@ -33,7 +33,7 @@ body {
 }
 .main-container {
   width: 35rem;
-  height: 70vh;
+  height: 60rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -53,12 +53,14 @@ body {
 .title {
   text-align: center;
   font-size: 4rem;
+  margin-top: 4rem;
 }
 .calc-container {
-  height: fit-content;
+  height: 75%;
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-top: 2rem;
   > div {
     padding: 1rem;
@@ -66,7 +68,7 @@ body {
 }
 .input-container {
   width: 100%;
-  height: 100%;
+  height: fit-content;
   > div {
     margin-bottom: 3rem;
   }
@@ -126,7 +128,7 @@ button,
   background-color: $accent;
   @include glass-box;
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 .results-container {
   padding: 1rem;

@@ -5,9 +5,14 @@ let btnList = document.querySelectorAll(".btn");
 let grossBill = document.getElementById("gross-bill");
 let totalEach = document.getElementById("total-each");
 let resetBtn = document.getElementById("reset");
+let custom = document.getElementById("custom");
 
 // get values of input boxes
 var tip;
+
+const getCustomValue = () => {
+  tip = custom.value / 100;
+};
 
 const calculateBill = () => {
   var bill = Number(billInput.value);
@@ -18,7 +23,11 @@ const calculateBill = () => {
   var billTotal = Number(bill + tipCalc);
 
   // split billTotal between no of people
-  var totalSplit = billTotal / people;
+  if (tip === undefined) {
+    var totalSplit = bill / people;
+  } else {
+    var totalSplit = billTotal / people;
+  }
 
   // print results to DOM
   // gross bill
@@ -45,8 +54,10 @@ const clearResult = () => {
   peopleInput.value = "";
   tip = "";
   document.querySelector(".selected")?.classList.remove("selected");
+  custom.value = "";
 };
 
+// highlight for tip% selected
 btnList.forEach((btn) => {
   btn.addEventListener("click", () => {
     document.querySelector(".selected")?.classList.remove("selected");

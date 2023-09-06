@@ -91,22 +91,40 @@ body {
   height: 100%;
 }
 
-.selected {
-  background-color: #7f9c5d;
-}
-
-button {
-  text-align: center;
-  background-color: #bfd1ab;
-  padding: 0.5rem;
-  border: none;
-}
-
 .grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem 1rem;
+  position: relative;
+}
+
+.percent-icon {
+  position: absolute;
+  height: 2.2rem;
+  right: 2rem;
+  bottom: 0.3rem;
+}
+
+button,
+.custom {
+  background-color: #bfd1ab;
+  padding: 0.5rem;
+  border: none;
+}
+
+.selected {
+  background-color: #7f9c5d;
+}
+
+::-moz-placeholder {
+  color: #000;
+  font-size: 1.4rem;
+}
+
+::placeholder {
+  color: #000;
+  font-size: 1.4rem;
 }
 
 .result {
@@ -124,6 +142,7 @@ button {
   background-color: #7f9c5d;
   border: none;
   padding: 1rem;
+  width: 4rem;
 }
 
 .reset:hover {
@@ -133,4 +152,8 @@ button {
 .reset:active {
   transform: scale(0.9);
   box-shadow: 0 0 9rem 0.2rem black;
+}
+
+.rest-icon {
+  height: 100%;
 }/*# sourceMappingURL=styles.css.map */

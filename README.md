@@ -1,2 +1,2 @@
-# tip-app
-Live version: https://tip-app-paula-cavender.netlify.app/
+#  JavaScript tip-app
+> [View it here](https://tip-app-paula-cavender.netlify.app/)
